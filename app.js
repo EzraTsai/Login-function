@@ -17,9 +17,9 @@ app.post('/', (req, res) => {
     const info = req.body
     const checkInfo = loginCheck(info)
     if (checkInfo.includes('Wrong')) {
-        res.render('index', { checkInfo })
+        res.render('index', { checkInfo, info })
     } else if (checkInfo.includes('account')) {
-        res.render('index', { checkInfo })
+        res.render('index', { checkInfo, info })
     } else {
         res.render('welcome', { checkInfo })
     }
